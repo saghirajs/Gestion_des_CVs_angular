@@ -1,0 +1,15 @@
+<div style="width: 100%; height: 70px; background-color: #2C93FF;">
+  <app-header></app-header>
+</div>
+<div>
+  <h1 style="margin: 50px; ">Liste des CVs</h1>
+</div>
+<div class="row">
+  <div class="col-md-6 col-sm-3">
+    <app-liste (selectedPersonne)="showCvDetails($event)" [personnes]="personnes"></app-liste>
+  </div>
+  <div class="col-md-6 col-sm-9" style=" padding: 20px;">
+    <app-details [personne]="selectedPersonne" *ngIf="selectedPersonne"></app-details>
+  </div>
+</div>
+<app-embauche></app-embauche>

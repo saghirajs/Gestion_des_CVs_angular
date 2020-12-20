@@ -1,0 +1,21 @@
+<div class="container" style="margin-top: 25%; width: 500px;">
+  <center><h1 style="margin-bottom: 50px;">Se connecter</h1></center>
+<form #loginFormilaire="ngForm">
+  <label for="email">Email: </label>
+  <input id="email" #email="ngModel" type="email" ngModel name="email" class="form-control" required="true">
+  <div class="alert alert-danger" *ngIf="email.invalid && email.touched">
+    Votre email est incorrect
+  </div>
+
+  <label for="password">Password: </label>
+  <input id="password" minlength="4" type="password" #pwdInput="ngModel" ngModel name="password" class="form-control" required="true">
+  <div class="alert alert-danger" *ngIf="pwdInput.invalid && pwdInput.touched">
+    Le password doit avoir au minimum 4 caractères
+  </div>
+  <center>
+  <button style="margin-top: 20px;" class="btn btn-primary" (click)="login(loginFormilaire.value)" [disabled]="loginFormilaire.invalid">
+    Se connecter
+  </button>
+  </center>
+</form>
+</div>

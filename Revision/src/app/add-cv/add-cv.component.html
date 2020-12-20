@@ -1,0 +1,21 @@
+<form #formulaire="ngForm">
+  <label for="firstName">First name: </label>
+  <input id="firstName" type="text" ngModel name="firstName" class="form-control" required="true">
+
+  <label for="lastName">Last name: </label>
+  <input id="lastName" type="text" ngModel name="lastName" class="form-control" required="true">
+
+  <label for="job">Job: </label>
+  <input id="job" type="text" ngModel name="job" class="form-control">
+
+  <label for="age">Age: </label>
+  <input id="age" min="0" max="100" type="number" ngModel name="age" class="form-control" required="true">
+
+  <label for="cin">CIN: </label>
+  <input id="cin" type="number" ngModel name="cin" class="form-control" required="true">
+
+  <label for="path">Path: </label>
+  <input id="path" type="text" ngModel name="path" class="form-control">
+
+  <button [disabled]="formulaire.invalid" (click)="addPersonne(formulaire)" class="btn btn-primary">Ajouter</button>
+</form>

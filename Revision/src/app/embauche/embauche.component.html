@@ -1,0 +1,9 @@
+<h1 style="margin: 50px; ">Liste des embauchés</h1>
+<div *ngIf="personnes">
+  <span *ngFor="let personne of personnes" style="padding: 20px;margin: 20px;">
+      <button class="btn btn-outline-danger" (click)="debaucher(this.personne)">
+        <img src="assets/images/{{personne.path}}" width="150px" height="150px" class="rounded-circle" alt="{{personne.firstName}}">
+        {{personne.firstName}} {{personne.lastName}}<br> <br><h6> Débaucher!!!</h6>
+      </button>
+  </span>
+</div>
